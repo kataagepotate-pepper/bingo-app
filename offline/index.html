@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>かまた祭 ビンゴ大会</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 1920×1080 の舞台を作って、画面の大きさに合わせて丸ごと拡大・縮小する（どのプロジェクターでも配置が崩れない） -->
+    <div class="viewport">
+      <div class="stage" id="stage">
+        <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+        <header class="head">
+          <img class="logo" src="assets/logo.png" alt="2026 かまた祭" />
+          <svg class="cloud" viewBox="0 0 290 190" aria-hidden="true">
+            <g fill="#fff">
+              <circle cx="70" cy="110" r="62" /><circle cx="140" cy="70" r="66" /><circle cx="215" cy="95" r="60" />
+              <circle cx="235" cy="135" r="46" /><circle cx="120" cy="140" r="50" /><circle cx="60" cy="150" r="34" />
+            </g>
+            <g fill="#fecdd0">
+              <circle cx="70" cy="110" r="52" /><circle cx="140" cy="70" r="56" /><circle cx="215" cy="95" r="50" />
+              <circle cx="235" cy="135" r="36" /><circle cx="120" cy="140" r="40" /><circle cx="60" cy="150" r="24" />
+            </g>
+          </svg>
+          <img class="saien" src="assets/saien.png" alt="彩縁 さいえん" />
+          <div class="head-right">
+            <h1 class="title" id="title" title="ダブルクリックで名前を変更">ビンゴ大会</h1>
+            <p class="remain" id="remain">のこり 75こ</p>
+          </div>
+        </header>
+
+        <img class="chara kamatu" src="assets/kamatu.png" alt="" />
+        <img class="chara kokaton" src="assets/kokaton.png" alt="" />
+
+        <section class="center">
+          <img class="collage" src="assets/collage.png" alt="" />
+          <p class="sign" id="sign">はじまるよ！</p>
+          <div class="card" id="card">
+            <span class="card-col" id="cardCol"></span>
+            <span class="card-num" id="cardNum">?</span>
+          </div>
+        </section>
+
+        <aside class="recent">
+          <p class="recent-label">まえの番号</p>
+          <div class="recent-list" id="recent"></div>
+        </aside>
+
+        <section class="board">
+          <p class="board-label">でた番号</p>
+          <div class="board-grid" id="board"></div>
+        </section>
+
+        <img class="chara girl" src="assets/girl.png" alt="" />
+      </div>
+    </div>
+
+    <!-- 司会用のボタン（マウスを動かすと出て、しばらくすると消える。Hキーで出さないように固定） -->
+    <div class="controls" id="controls">
+      <button class="btn btn-main" id="draw">番号を引く<kbd>Space</kbd></button>
+      <button class="btn" id="undo">1つ戻す</button>
+      <button class="btn" id="sound">音：あり</button>
+      <button class="btn" id="full">全画面<kbd>F</kbd></button>
+      <button class="btn btn-danger" id="reset">最初から</button>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
